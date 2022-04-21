@@ -1,0 +1,64 @@
+.header{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  /* background-color: black; */
+}
+.top-heading{
+  background-color: red;
+  height: 5vw;
+  width: 10vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 1vw;
+  animation: mymove 20s infinite;
+}
+@keyframes mymove{
+  0%{
+    margin-left:0vw;
+  }
+  50%{
+    margin-left: 88.8vw;
+  }
+  100%{
+    margin-left: 0vw;
+  }
+}
+.theme{
+  display: flex;
+  justify-content: space-evenly;
+  height: 2vw;
+  
+}
+.light{
+  background-color: white;
+  width: 20vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.dark{
+  background-color: black;
+}
+.nature{
+  background-color: green;
+}
+.cool{
+  background-color: blue;
+}
+.space{
+  background-color: purple;
+  
+}
+.feature{
+  width: 20vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  cursor: pointer;
+  color: white;
+}
