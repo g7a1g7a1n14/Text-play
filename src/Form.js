@@ -1,7 +1,6 @@
 import {useState} from 'react'
-
+// import Trans from './element'
 const Form = (props) => {
-  
   const REAL = () =>{
     let newOne = text.toUpperCase();
     setText(newOne)
@@ -48,24 +47,22 @@ const Form = (props) => {
   const[text,setText] = useState("Enter the text here");
   return (
     <>
-      <div className='container'>
+      <div className='container' id ="trans">
         <div class="mb-3 my-5">
-          <label for="myBox" class="form-label" style = {{color : props.mode === 'dark'?'white':'#131516'}}><h1>{props.heading}</h1></label>
-          <textarea className='form-control' value={text} onChange = {canChange} style = {{backgroundColor : props.mode === 'dark'?'#131516':'white',color : props.mode === 'dark'?'white':'#131516'}} id="myBox" rows="8"></textarea>
+          <label for="myBox" class="form-label" style = {{color : props.mode === 'white'?'black':'white'}}><h1>{props.heading}</h1></label>
+          <textarea className='form-control' value={text} onChange = {canChange} id="myBox" rows="8" style={{background: "rgb(247, 201, 201)"}}></textarea>
         </div>
-        <button type="submit" class="btn btn-primary mx-2" onClick={REAL}>Uppercase</button>
-        <button type="submit" class="btn btn-primary mx-2" onClick={real}>Lowercase</button>
-        <button type="submit" class="btn btn-primary mx-2" onClick={Xspace}>Remove Extra Spaces</button>
-        <button type="submit" class="btn btn-primary mx-2" onClick={ch1}>Alternate casing</button>
-        <button type="submit" class="btn btn-primary mx-2" onClick={challenge2}>Replace text</button>
-        <button type="submit" class="btn btn-primary mx-2" onClick={exercise}>Clear</button>
-
+        <button type="submit" class="btn btn-danger mx-2" onClick={REAL}>Convert to Uppercase</button>
+        <button type="submit" class="btn btn-danger mx-2" onClick={real}>Convert to Lowercase</button>
+        <button type="submit" class="btn btn-danger mx-2" onClick={Xspace}>Remove Extra Spaces</button>
+        <button type="submit" class="btn btn-danger mx-2" onClick={ch1}>Alternate casing</button>
+        <button type="submit" class="btn btn-danger mx-2" onClick={challenge2}>Replace text</button>
+        <button type="submit" class="btn btn-danger mx-2" onClick={exercise}>Clear</button>
       </div>
-      <div className="container my-5" style = {{color : props.mode === 'dark'?'white':'#131516'}}>
+      <div className="container my-5" style = {{color : props.mode === 'white'?'black':'white'}}>
         <h1>Your Text Summary</h1>
         <p>
-          Words: 
-          {text.length > 0 &&
+          Words: {text.length > 0 &&
             text.split(/\s+/).length
           } 
           {text.length === 0 &&
@@ -73,8 +70,7 @@ const Form = (props) => {
           } 
           <br />
           Characters: {text.length} <br />
-          Time to read:
-          {text.length > 0 &&
+          Time to read: {text.length > 0 &&
             0.34* text.split(/\s+/).length
           }
           {text.length === 0 &&
