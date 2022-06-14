@@ -41,6 +41,15 @@ const Form = (props) => {
     let newOne = text.replaceAll(person,person2)
     setText(newOne);
   }
+
+  const density = () =>{
+    let word = prompt("Please enter the text:", "Enter here");
+    function count(text, find) {
+      return (text.split(find)).length - 1;
+    }  
+    alert(`Frequency of ${word} = ${count(text,word)}`);
+  }
+
   const canChange = (element) =>{
     setText(element.target.value);
   }
@@ -57,7 +66,9 @@ const Form = (props) => {
         <button type="submit" class="btn btn-danger mx-2" onClick={Xspace}>Remove Extra Spaces</button>
         <button type="submit" class="btn btn-danger mx-2" onClick={ch1}>Alternate casing</button>
         <button type="submit" class="btn btn-danger mx-2" onClick={challenge2}>Replace text</button>
+        <button type="submit" class="btn btn-danger mx-2" onClick={density}>Density</button>
         <button type="submit" class="btn btn-danger mx-2" onClick={exercise}>Clear</button>
+
       </div>
       <div className="container my-5" style = {{color : props.mode === 'white'?'black':'white'}}>
         <h1>Your Text Summary</h1>
